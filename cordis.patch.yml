@@ -1,0 +1,4 @@
+- insert:
+    - id: omni-browser
+      name: dsh-omni-browser
+      config: {}

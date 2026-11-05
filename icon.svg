@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-label="Omni Browser">
+  <defs>
+    <linearGradient id="omni-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2563eb"/>
+      <stop offset="1" stop-color="#7c3aed"/>
+    </linearGradient>
+  </defs>
+  <rect width="256" height="256" rx="56" fill="url(#omni-bg)"/>
+  <path d="M64 96V72a8 8 0 0 1 8-8h24M192 96V72a8 8 0 0 0-8-8h-24M64 160v24a8 8 0 0 0 8 8h24M192 160v24a8 8 0 0 1-8 8h-24"
+        fill="none" stroke="#ffffff" stroke-width="14" stroke-linecap="round"/>
+  <circle cx="128" cy="128" r="30" fill="none" stroke="#ffffff" stroke-width="14"/>
+  <circle cx="128" cy="128" r="9" fill="#ffffff"/>
+</svg>

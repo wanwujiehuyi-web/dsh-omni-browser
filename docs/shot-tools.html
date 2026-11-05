@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>dsh-omni-browser — 16 tools</title>
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; width: 1600px; height: 1000px; overflow: hidden; }
+  body {
+    font-family: "Segoe UI", "Microsoft YaHei", system-ui, sans-serif;
+    background: radial-gradient(1200px 700px at 15% -10%, #1d2b5c 0%, transparent 60%),
+                radial-gradient(900px 600px at 100% 0%, #3b1d63 0%, transparent 55%),
+                linear-gradient(160deg, #0b1020 0%, #0d1226 55%, #0a0f1f 100%);
+    color: #e8ecf8; padding: 64px 72px; position: relative;
+  }
+  .grid-bg { position: absolute; inset: 0; opacity: .18;
+    background-image: linear-gradient(#2a3560 1px, transparent 1px), linear-gradient(90deg, #2a3560 1px, transparent 1px);
+    background-size: 48px 48px; mask-image: radial-gradient(80% 70% at 50% 20%, #000 30%, transparent 100%); }
+  header { display: flex; align-items: center; gap: 16px; position: relative; }
+  .logo { width: 56px; height: 56px; border-radius: 14px;
+    background: linear-gradient(135deg, #2563eb, #7c3aed); position: relative; box-shadow: 0 10px 30px rgba(99,102,241,.45); }
+  .logo::before, .logo::after { content: ""; position: absolute; inset: 12px; border: 3px solid #fff; border-radius: 4px;
+    clip-path: polygon(0 0, 35% 0, 35% 100%, 0 100%, 0 0, 0 45%, 0 45%); }
+  .logo::after { inset: 20px; border-radius: 50%; clip-path: none; opacity: .9; }
+  .brand { font-size: 15px; letter-spacing: .22em; text-transform: uppercase; color: #93a0c8; }
+  h1 { font-size: 52px; line-height: 1.08; margin: 34px 0 10px; letter-spacing: -.02em; position: relative; }
+  h1 em { font-style: normal; background: linear-gradient(90deg, #7aa2ff, #c084fc); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .sub { font-size: 20px; color: #9fb0d8; margin-bottom: 40px; position: relative; }
+  .sub b { color: #e8ecf8; font-weight: 600; }
+  .cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; position: relative; }
+  .col { background: rgba(255,255,255,.035); border: 1px solid rgba(140,160,220,.16); border-radius: 18px; padding: 22px 24px; }
+  .col h2 { font-size: 13px; letter-spacing: .18em; text-transform: uppercase; margin: 0 0 16px; color: #8fa2d8; font-weight: 600; }
+  .col.control h2 { color: #6ee7b7; } .col.read h2 { color: #7aa2ff; } .col.capture h2 { color: #c084fc; }
+  .tool { font-family: Consolas, "Cascadia Mono", monospace; font-size: 18px; padding: 7px 0; border-bottom: 1px dashed rgba(140,160,220,.12);
+    display: flex; justify-content: space-between; gap: 12px; }
+  .tool:last-child { border-bottom: 0; }
+  .tool span { color: #98a6cc; font-family: "Segoe UI", sans-serif; font-size: 14px; align-self: center; }
+  .demo { position: relative; margin-top: 30px; display: grid; grid-template-columns: 1.1fr .9fr; gap: 22px; }
+  .code { background: #070b17; border: 1px solid rgba(140,160,220,.18); border-radius: 16px; padding: 20px 24px;
+    font-family: Consolas, monospace; font-size: 17px; line-height: 1.75; }
+  .code .k { color: #7aa2ff; } .code .s { color: #a5f3b4; } .code .c { color: #6b7aa8; }
+  .out { background: rgba(108, 92, 231, .12); border: 1px solid rgba(160, 130, 255, .3); border-radius: 16px; padding: 20px 24px; font-size: 16px; line-height: 1.7; }
+  .out b { color: #d6c2ff; }
+  .pill { display: inline-block; font-size: 13px; padding: 4px 12px; border-radius: 999px; background: rgba(124,58,237,.2);
+    border: 1px solid rgba(192,132,252,.35); color: #e3d5ff; margin-right: 8px; }
+  footer { position: absolute; left: 72px; bottom: 34px; font-size: 14px; color: #66739b; letter-spacing: .04em; }
+</style>
+</head>
+<body>
+<div class="grid-bg"></div>
+<header>
+  <div class="logo"></div>
+  <div>
+    <div class="brand">dsh-omni-browser · DSH plugin</div>
+  </div>
+</header>
+<h1>16 tools. One real browser.<br><em>Everything a page is, captured.</em></h1>
+<div class="sub">Control Chrome over raw CDP — <b>and</b> take the DOM, accessibility tree, HAR with bodies, console, storage, screenshots, PDF and screencast with you.</div>
+
+<div class="cols">
+  <div class="col control">
+    <h2>Control</h2>
+    <div class="tool">omni_status <span>launch · close</span></div>
+    <div class="tool">omni_open <span>navigate</span></div>
+    <div class="tool">omni_tabs <span>list · new · close</span></div>
+    <div class="tool">omni_act <span>16 real actions</span></div>
+    <div class="tool">omni_eval <span>run JS</span></div>
+    <div class="tool">omni_download <span>enable · wait</span></div>
+    <div class="tool">omni_record <span>screencast</span></div>
+  </div>
+  <div class="col read">
+    <h2>Read</h2>
+    <div class="tool">omni_page <span>10 views</span></div>
+    <div class="tool">omni_screenshot <span>4 modes</span></div>
+    <div class="tool">omni_pdf <span>print to PDF</span></div>
+    <div class="tool">omni_network <span>HAR · bodies</span></div>
+    <div class="tool">omni_console <span>logs · errors</span></div>
+    <div class="tool">omni_perf <span>trace · coverage</span></div>
+  </div>
+  <div class="col capture">
+    <h2>Capture</h2>
+    <div class="tool">omni_storage <span>cookies · IDB</span></div>
+    <div class="tool">omni_capture <span>full evidence pack</span></div>
+    <div class="tool">omni_harvest <span>bounded crawl</span></div>
+    <div style="margin-top:18px">
+      <span class="pill">HAR 1.2</span><span class="pill">AX tree</span><span class="pill">IndexedDB</span>
+    </div>
+    <div style="margin-top:10px">
+      <span class="pill">full-page PNG</span><span class="pill">PDF</span><span class="pill">Zero deps</span>
+    </div>
+  </div>
+</div>
+
+<div class="demo">
+  <div class="code">
+    <div><span class="c">// one call, one folder</span></div>
+    <div><span class="k">omni_capture</span> {</div>
+    <div>&nbsp;&nbsp;<span class="k">"name"</span>: <span class="s">"checkout-bug"</span>,</div>
+    <div>&nbsp;&nbsp;<span class="k">"bodies"</span>: <span class="s">"all"</span>,</div>
+    <div>&nbsp;&nbsp;<span class="k">"pdf"</span>: <span class="k">true</span>, <span class="k">"storage"</span>: <span class="k">true</span></div>
+    <div>}</div>
+  </div>
+  <div class="out">
+    <b>14 files · 1.8 MB</b><br>
+    manifest.json / page.json / page.png / page-full.png / page.pdf / dom.html / text.txt /
+    ax.json / network.har.json / bodies/ / console.json / storage.json / cookies.json / perf.json
+  </div>
+</div>
+
+<footer>github.com/wanwujiehuyi-web/dsh-omni-browser · MIT · Node 22+ · Chrome / Edge / Chromium</footer>
+</body>
+</html>

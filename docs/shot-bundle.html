@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>dsh-omni-browser — evidence bundle</title>
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; width: 1600px; height: 1000px; overflow: hidden; }
+  body {
+    font-family: "Segoe UI", "Microsoft YaHei", system-ui, sans-serif;
+    background: radial-gradient(1100px 650px at 90% -10%, #2b1c5e 0%, transparent 60%),
+                radial-gradient(1000px 700px at -5% 100%, #123a52 0%, transparent 55%),
+                linear-gradient(200deg, #090d1a 0%, #0c1122 60%, #0a0f1f 100%);
+    color: #e8ecf8; padding: 60px 72px; position: relative;
+  }
+  .grid-bg { position: absolute; inset: 0; opacity: .16;
+    background-image: linear-gradient(#2a3560 1px, transparent 1px), linear-gradient(90deg, #2a3560 1px, transparent 1px);
+    background-size: 48px 48px; mask-image: radial-gradient(85% 75% at 50% 30%, #000 25%, transparent 100%); }
+  header { display: flex; align-items: center; gap: 16px; position: relative; }
+  .logo { width: 52px; height: 52px; border-radius: 13px;
+    background: linear-gradient(135deg, #2563eb, #7c3aed); box-shadow: 0 10px 28px rgba(99,102,241,.45); }
+  .brand { font-size: 14px; letter-spacing: .22em; text-transform: uppercase; color: #93a0c8; }
+  h1 { font-size: 46px; line-height: 1.1; margin: 30px 0 8px; letter-spacing: -.02em; position: relative; }
+  h1 em { font-style: normal; background: linear-gradient(90deg, #7aa2ff, #c084fc); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .sub { font-size: 19px; color: #9fb0d8; margin-bottom: 34px; position: relative; }
+  .body { display: grid; grid-template-columns: 1.15fr .85fr; gap: 24px; position: relative; }
+  .panel { background: rgba(255,255,255,.035); border: 1px solid rgba(140,160,220,.16); border-radius: 18px; padding: 24px 26px; }
+  .panel h2 { font-size: 13px; letter-spacing: .18em; text-transform: uppercase; margin: 0 0 18px; color: #8fa2d8; font-weight: 600; }
+  .tree { font-family: Consolas, "Cascadia Mono", monospace; font-size: 17px; line-height: 1.95; }
+  .tree .dir { color: #c084fc; } .tree .file { color: #dbe4ff; } .tree .dim { color: #6b7aa8; }
+  .tree .ok { color: #6ee7b7; }
+  pre { margin: 0; font-family: Consolas, monospace; font-size: 15px; line-height: 1.75; color: #cbd6f5; white-space: pre-wrap; }
+  .k { color: #7aa2ff; } .s { color: #a5f3b4; } .n { color: #f0b472; } .c { color: #6b7aa8; }
+  .stats { display: flex; gap: 14px; margin-top: 20px; }
+  .stat { flex: 1; background: rgba(124,58,237,.14); border: 1px solid rgba(192,132,252,.28); border-radius: 12px; padding: 12px 14px; }
+  .stat b { display: block; font-size: 24px; color: #e3d5ff; }
+  .stat span { font-size: 12.5px; color: #9aa8d0; letter-spacing: .06em; text-transform: uppercase; }
+  footer { position: absolute; left: 72px; bottom: 32px; font-size: 14px; color: #66739b; letter-spacing: .04em; }
+</style>
+</head>
+<body>
+<div class="grid-bg"></div>
+<header><div class="logo"></div><div class="brand">dsh-omni-browser · one call → one evidence bundle</div></header>
+<h1>Not a screenshot.<br><em>The whole page state.</em></h1>
+<div class="sub">omni_capture writes every layer of what the browser saw into one self-contained folder a human — or another model — can read.</div>
+
+<div class="body">
+  <div class="panel">
+    <h2>omni-capture / checkout-bug-20261105</h2>
+    <div class="tree">
+      <div><span class="dir">manifest.json</span> <span class="dim">schema, per-artifact status, timings</span> <span class="ok">✓</span></div>
+      <div><span class="dir">page.json</span> <span class="dim">title, meta, outline, links, forms, counts</span> <span class="ok">✓</span></div>
+      <div><span class="dir">page.png</span> <span class="dim">viewport screenshot</span> <span class="ok">✓</span></div>
+      <div><span class="dir">page-full.png</span> <span class="dim">beyond the fold</span> <span class="ok">✓</span></div>
+      <div><span class="dir">page.pdf</span> <span class="dim">vector print-to-PDF</span> <span class="ok">✓</span></div>
+      <div><span class="dir">dom.html</span> <span class="dim">rendered DOM</span> <span class="ok">✓</span></div>
+      <div><span class="dir">text.txt</span> <span class="dim">readable innerText</span> <span class="ok">✓</span></div>
+      <div><span class="dir">ax.json</span> <span class="dim">accessibility tree + backend ids</span> <span class="ok">✓</span></div>
+      <div><span class="dir">network.har.json</span> <span class="dim">HAR 1.2 + postData</span> <span class="ok">✓</span></div>
+      <div><span class="dir">network.json</span> <span class="dim">compact request list</span> <span class="ok">✓</span></div>
+      <div><span class="dir">bodies/</span> <span class="dim">0001-checkout.json, 0002-auth.json …</span> <span class="ok">✓</span></div>
+      <div><span class="dir">console.json</span> <span class="dim">logs + uncaught exceptions</span> <span class="ok">✓</span></div>
+      <div><span class="dir">storage.json</span> <span class="dim">cookies · localStorage · IndexedDB · CacheStorage</span> <span class="ok">✓</span></div>
+      <div><span class="dir">cookies.json</span> <span class="ok">✓</span></div>
+      <div><span class="dir">perf.json</span> <span class="dim">heap, nodes, layout metrics</span> <span class="ok">✓</span></div>
+      <div><span class="dir">resources.json</span> <span class="dim">resource tree + sizes</span> <span class="ok">✓</span></div>
+    </div>
+  </div>
+
+  <div>
+    <div class="panel">
+      <h2>manifest.json</h2>
+      <pre>{
+  <span class="k">"ok"</span>: <span class="n">true</span>,
+  <span class="k">"url"</span>: <span class="s">"https://shop.example/checkout"</span>,
+  <span class="k">"title"</span>: <span class="s">"Checkout — Example Shop"</span>,
+  <span class="k">"parts"</span>: {
+    <span class="k">"page"</span>: { <span class="k">"ok"</span>: <span class="n">true</span>, <span class="k">"ms"</span>: <span class="n">31</span> },
+    <span class="k">"screenshot"</span>: { <span class="k">"ok"</span>: <span class="n">true</span>, <span class="k">"ms"</span>: <span class="n">482</span> },
+    <span class="k">"pdf"</span>: { <span class="k">"ok"</span>: <span class="n">true</span>, <span class="k">"ms"</span>: <span class="n">615</span> },
+    <span class="k">"har"</span>: { <span class="k">"ok"</span>: <span class="n">true</span>, <span class="k">"entries"</span>: <span class="n">37</span> },
+    <span class="k">"storage"</span>: { <span class="k">"ok"</span>: <span class="n">true</span>, <span class="k">"origins"</span>: <span class="n">1</span> }
+  },
+  <span class="k">"stats"</span>: { <span class="k">"durationMs"</span>: <span class="n">1984</span> },
+  <span class="k">"capturedAt"</span>: <span class="s">"2026-11-05T07:12:44.913Z"</span>
+}</pre>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>37</b><span>requests</span></div>
+      <div class="stat"><b>1.8 MB</b><span>bundle</span></div>
+      <div class="stat"><b>2.0 s</b><span>one call</span></div>
+    </div>
+  </div>
+</div>
+
+<footer>graceful degradation: any part that fails is recorded in the manifest, the rest of the bundle still lands · github.com/wanwujiehuyi-web/dsh-omni-browser</footer>
+</body>
+</html>

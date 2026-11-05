@@ -1,0 +1,59 @@
+{
+  "name": "dsh-omni-browser",
+  "version": "0.1.0",
+  "description": "Drive a real Chrome from DSH and capture everything a page is — DOM, accessibility tree, HAR with response bodies, console, cookies/storage, full-page screenshots, PDF and screencast — as one self-contained evidence bundle.",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./lib/*": "./lib/*",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "lib",
+    "locale",
+    "icon.svg",
+    "cordis.patch.yml",
+    "README.md",
+    "README.zh.md",
+    "screenshots.json",
+    "CONTRACT.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node test/smoke.mjs"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "browser",
+    "browser-automation",
+    "cdp",
+    "chrome-devtools",
+    "capture",
+    "har",
+    "screenshot",
+    "web-scraping",
+    "evidence"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wanwujiehuyi-web/dsh-omni-browser.git"
+  },
+  "homepage": "https://github.com/wanwujiehuyi-web/dsh-omni-browser#readme",
+  "bugs": {
+    "url": "https://github.com/wanwujiehuyi-web/dsh-omni-browser/issues"
+  },
+  "private": true
+}
